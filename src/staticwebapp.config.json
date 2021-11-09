@@ -2,11 +2,11 @@
      "routes": [
           {
          "route": "/",
-                "allowedRoles": [ "authenticated" ]
+                "allowedRoles": [ "anonymous" ]
           },
           {
          "route": "/in",
-                "allowedRoles": [ "anonymous" ]
+                "allowedRoles": [ "authenticated" ]
           }
      ],
      "responseOverrides": {
