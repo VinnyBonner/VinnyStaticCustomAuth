@@ -7,11 +7,6 @@
           {
          "route": "/in",
                 "allowedRoles": [ "authenticated" ]
-          },{
-          "route": "/.auth/complete",
-          "allowedRoles": [
-              "anonymous"
-          ]
           },
 	  {
             "route": "/.auth/login/github/callback",
