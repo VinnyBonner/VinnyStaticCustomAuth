@@ -15,10 +15,7 @@
           },
 	  {
             "route": "/.auth/login/github/callback",
-            "allowedRoles": [
-                "anonymous"
-            ],
-		  "redirect": "/in"
+	    "redirect": "/in"	  
         }
      ],
      "globalHeaders": {
