@@ -4,14 +4,15 @@
          "route": "/",
                 "allowedRoles": [ "anonymous" ]
           },
-          {
-         "route": "/in",
-                "allowedRoles": [ "authenticated" ]
-          },
-	  {
+	     {
             "route": "/.auth/login/github/callback",
 	    "redirect": "/in"	  
-        },
+         },
+          {
+		  
+         "route": "/in",
+                "allowedRoles": [ "authenticated" ]
+          },	  
 	{
             "route": "/login",
 	    "redirect": "/.auth/login/github"	  
