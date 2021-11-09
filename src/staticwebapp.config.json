@@ -6,7 +6,7 @@
           },
           {
          "route": "/in",
-                "allowedRoles": [ "authenticated" ]
+                "allowedRoles": [ "anonymous" ]
           }
      ],
      "globalHeaders": {
