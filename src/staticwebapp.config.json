@@ -11,6 +11,10 @@
 	  {
             "route": "/.auth/login/github/callback",
 	    "redirect": "/in"	  
+        },
+	{
+            "route": "/login",
+	    "redirect": "/.auth/login/github"	  
         }
      ],
      "globalHeaders": {
