@@ -7,7 +7,18 @@
           {
          "route": "/in",
                 "allowedRoles": [ "authenticated" ]
-          }
+          },{
+          "route": "/.auth/complete",
+          "allowedRoles": [
+              "anonymous"
+          ]
+          },
+	  {
+            "route": "/.auth/login/github/callback",
+            "allowedRoles": [
+                "anonymous"
+            ]
+        }
      ],
      "globalHeaders": {
         "content-security-policy": "default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'"
