@@ -15,15 +15,14 @@
     "mimeTypes": {
         ".json": "text/json"
     },
-     "auth": {
-       "identityProviders": {
-         "azureActiveDirectory": {
-           "registration": {
-             "openIdIssuer": "https://login.microsoftonline.com/eba5f478-cded-4106-bc9d-1b96fd228d60",
-             "clientIdSettingName": "AADClientID",
-             "clientSecretSettingName": "AADSecret"
-           },"userDetailsClaim": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
-                 }
-       }
-     }
+    "auth": {
+    "identityProviders": {
+      "github": {
+        "registration": {
+          "clientIdSettingName": "GITHUB_CLIENT_ID",
+          "clientSecretSettingName": "GITHUB_CLIENT_SECRET"
+        }
+      }
+    }
+  }
    }
