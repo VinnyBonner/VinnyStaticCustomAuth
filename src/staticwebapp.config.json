@@ -30,7 +30,6 @@
         "statusCode": 302
 	}
   },
-  {
   "auth": {
     "identityProviders": {
       "customOpenIdConnectProviders": {
