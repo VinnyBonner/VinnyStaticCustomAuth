@@ -5,7 +5,7 @@
                 "allowedRoles": [ "anonymous" ]
           },
 	     {
-            "route": "/.auth/login/github/callback",
+            "route": "/.auth/login/myProvider/callback",
 	    "redirect": "/in"	  
          },
           {
@@ -15,7 +15,7 @@
           },	  
 	{
             "route": "/login",
-	    "redirect": "/.auth/login/github"	  
+	    "redirect": "/.auth/login/myProvider"	  
         }
      ],
      "globalHeaders": {
@@ -26,7 +26,7 @@
     },
      "responseOverrides": {
     "401": {
-        "redirect": "/.auth/login/github",
+        "redirect": "/.auth/login/myProvider",
         "statusCode": 302
 	}
   },
