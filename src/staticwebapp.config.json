@@ -1,55 +1,40 @@
 {
-     "routes": [
-          {
-         "route": "/",
-                "allowedRoles": [ "anonymous" ]
-          },
-	     {
-            "route": "/.auth/login/myProvider/callback",
-	    "redirect": "/in"	  
-         },
-          {
-		  
-         "route": "/in",
-                "allowedRoles": [ "authenticated" ]
-          },	  
-	{
-            "route": "/login",
-	    "redirect": "/.auth/login/myProvider"	  
-        }
-     ],
-     "globalHeaders": {
-        "content-security-policy": "default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'"
+    "routes": [{
+        "route": "/",
+         "allowedRoles": [ "anonymous" ]
     },
-    "mimeTypes": {
-        ".json": "text/json"
+    {
+        "route": "/in",
+        "allowedRoles": [ "authenticated" ]
     },
-     "responseOverrides": {
-    "401": {
-        "redirect": "/.auth/login/myProvider",
-        "statusCode": 302
-	}
-  },
-  "auth": {
-    "identityProviders": {
-      "customOpenIdConnectProviders": {
-        "myProvider": {
-          "registration": {
-            "clientIdSettingName": "MY_PROVIDER_CLIENT_ID",
-            "clientCredential": {
-              "clientSecretSettingName": "MY_PROVIDER_CLIENT_SECRET"
-            },
-            "openIdConnectConfiguration": {
-              "wellKnownOpenIdConfiguration": "https://accounts.google.com/.well-known/openid-configuration"
+    {
+        "route": "/.auth/complete",
+        "allowedRoles": [ "anonymous" ]
+    },
+    {
+        "route": "/.auth/login/myProvider/callback",
+        "allowedRoles": [ "anonymous" ]
+    }],
+    "auth": {
+        "identityProviders": {
+            "customOpenIdConnectProviders": {
+                "myProvider": {
+                    "registration": {
+                        "clientIdSettingName": "MY_PROVIDER_CLIENT_ID",
+                        "clientCredential": {
+                            "clientSecretSettingName": "MY_PROVIDER_CLIENT_SECRET"
+                        },
+                        "openIdConnectConfiguration": {
+                            "wellKnownOpenIdConfiguration": "https://accounts.google.com/.well-known/openid-configuration"
+                        }
+                    },
+                    "login": {
+                        "nameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+                        "scopes": [],
+                        "loginParameterNames": []
+                    }
+                }
             }
-          },
-          "login": {
-            "nameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
-            "scopes": [],
-            "loginParameterNames": []
-          }
         }
-      }
-    }
-  }
+    } 
 }
