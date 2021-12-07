@@ -30,14 +30,27 @@
         "statusCode": 302
 	}
   },
-    "auth": {
+  {
+  "auth": {
     "identityProviders": {
-      "github": {
-        "registration": {
-          "clientIdSettingName": "GITHUB_CLIENT_ID",
-          "clientSecretSettingName": "GITHUB_CLIENT_SECRET"
+      "customOpenIdConnectProviders": {
+        "myProvider": {
+          "registration": {
+            "clientIdSettingName": "MY_PROVIDER_CLIENT_ID",
+            "clientCredential": {
+              "clientSecretSettingName": "MY_PROVIDER_CLIENT_SECRET"
+            },
+            "openIdConnectConfiguration": {
+              "wellKnownOpenIdConfiguration": "https://accounts.google.com/.well-known/openid-configuration"
+            }
+          },
+          "login": {
+            "nameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+            "scopes": [],
+            "loginParameterNames": []
+          }
         }
       }
     }
   }
-   }
+}
